@@ -1,0 +1,27 @@
+{
+  "name": "ManagerKit",
+  "version": "0.1.0",
+  "summary": "A short description of ManagerKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/高濛/ManagerKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "高濛": "gao19851004@163.com"
+  },
+  "source": {
+    "path": "~/ManagerKit",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "ManagerKit/Classes/**/*",
+  "resource_bundles": {
+    "ManagerKit": [
+      "ManagerKit/Assets/*.{png,storyboard,xib,xcassets}"
+    ]
+  }
+}

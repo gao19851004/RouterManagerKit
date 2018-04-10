@@ -1,0 +1,6 @@
+use_frameworks!
+target 'TwoKit_Tests' do
+  pod 'TwoKit', :path => '../'
+  
+  
+end

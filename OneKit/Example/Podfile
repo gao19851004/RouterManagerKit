@@ -1,0 +1,6 @@
+use_frameworks!
+target 'OneKit_Tests' do
+  pod 'OneKit', :path => '../'
+  
+  
+end

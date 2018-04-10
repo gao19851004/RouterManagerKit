@@ -1,0 +1,28 @@
+PODS:
+  - ManagerKit (0.1.0)
+  - OneKit (0.1.0):
+    - ManagerKit
+  - TwoKit (0.1.0):
+    - ManagerKit
+
+DEPENDENCIES:
+  - ManagerKit (from `ManagerKit`)
+  - OneKit (from `OneKit`)
+  - TwoKit (from `TwoKit`)
+
+EXTERNAL SOURCES:
+  ManagerKit:
+    :path: ManagerKit
+  OneKit:
+    :path: OneKit
+  TwoKit:
+    :path: TwoKit
+
+SPEC CHECKSUMS:
+  ManagerKit: 87c1aeb6d30e817d3211b225f407dda1d1db5ae1
+  OneKit: 37590a46fcc4aa633ab45bf839b25f6ccd663505
+  TwoKit: 5d4f27d1df631f20cbd4e0380d10390993be725e
+
+PODFILE CHECKSUM: 4be8459d03f46ef9e15fbb68ac69fec7787671e0
+
+COCOAPODS: 1.5.0

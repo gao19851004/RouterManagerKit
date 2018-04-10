@@ -1,0 +1,6 @@
+use_frameworks!
+target 'ManagerKit_Tests' do
+  pod 'ManagerKit', :path => '../'
+  
+  
+end

@@ -1,0 +1,22 @@
+{
+  "name": "TwoKit",
+  "version": "0.1.0",
+  "summary": "A short description of TwoKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/高濛/TwoKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "高濛": "gao19851004@163.com"
+  },
+  "source": {
+    "git": "https://github.com/高濛/TwoKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TwoKit/Classes/**/*"
+}

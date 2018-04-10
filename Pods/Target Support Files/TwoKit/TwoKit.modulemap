@@ -1,0 +1,6 @@
+framework module TwoKit {
+  umbrella header "TwoKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

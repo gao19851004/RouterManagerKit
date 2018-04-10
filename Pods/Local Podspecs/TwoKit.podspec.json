@@ -1,0 +1,32 @@
+{
+  "name": "TwoKit",
+  "version": "0.1.0",
+  "summary": "A short description of TwoKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/高濛/TwoKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "高濛": "gao19851004@163.com"
+  },
+  "source": {
+    "path": "~/TwoKit",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "TwoKit/Classes/**/*",
+  "resource_bundles": {
+    "TwoKit": [
+      "TwoKit/Assets/*.{png,storyboard,xib,xcassets}"
+    ]
+  },
+  "dependencies": {
+    "ManagerKit": [
+
+    ]
+  }
+}
