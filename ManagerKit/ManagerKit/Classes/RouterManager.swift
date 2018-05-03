@@ -8,30 +8,16 @@
 import UIKit
 
 public func findRootNavgationController() -> UINavigationController? {
-    
     let rootVC = UIApplication.shared.windows[0].rootViewController
-    
-    if rootVC != nil && rootVC is UINavigationController {
-        return rootVC as? UINavigationController
-    } else {
-        return nil
-    }
+    return (rootVC != nil && rootVC is UINavigationController) ? rootVC as? UINavigationController : nil
 }
 
 public typealias RouterCallBack = (NSDictionary)->(UIViewController)
-
+public typealias RouterCallBackForView = (NSDictionary)->(UIView)
 
 public class RouterManager : NSObject {
     
-    //注册目标类型列表
-    public enum PushType : String {
-        
-        //测试类型
-        case one = "one"
-        case two = "two"
-    }
-    
-    var registers = NSMutableDictionary()
+    var registers = NSMutableDictionary() //注册回调目录
     var config : RouterConfig?
     
     public static let shared = RouterManager()
@@ -42,18 +28,43 @@ public class RouterManager : NSObject {
     
     public func registerConfig(config : RouterConfig) {
         //将config注册到manager
+        config.registerCallBacks()
         registers.addEntries(from: config.registers)
     }
     
-    public func rootNavigationPush(type : PushType, parmars : NSDictionary) {
+    //获取View
+    public func getAssemblyForViewClass(key : String, parmars : NSDictionary) -> UIView? {
         
-        let nav = findRootNavgationController()
-        let call = self.registers[type.rawValue] as? RouterCallBack
+        let call = self.registers[key] as? RouterCallBackForView
+        guard let callBack = call else {
+            print("error : not find \(key) type in registers")
+            return nil
+        }
+        let v = callBack(parmars)
+        return v
+    }
+    
+    //获取VC
+    public func getAssemblyForViewControllerClass(key : String, parmars : NSDictionary) -> UIViewController? {
+        
+        let call = self.registers[key] as? RouterCallBack
+        guard let callBack = call else {
+            print("error : not find \(key) type in registers")
+            return nil
+        }
+        let vc = callBack(parmars)
+        return vc
+    }
+    
+    //字符串常亮方式
+    public func rootNavigationPush(kActionKey : String ,parmars : NSDictionary) {
+        let call = self.registers[kActionKey] as? RouterCallBack
         
         guard let callBack = call else {
-            return print("error : not find \(type.rawValue) type in registers")
+            return print("error : not find \(kActionKey) type in registers")
         }
         
+        let nav = findRootNavgationController()
         let vc = callBack(parmars)
         nav?.pushViewController(vc, animated: true)
     }
