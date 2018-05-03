@@ -24,11 +24,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func oneKitAction() {
-        RouterManager.shared.rootNavigationPush(type: .one, parmars: [:])
+        RouterManager.shared.rootNavigationPush(kActionKey: kOneActonKey, parmars: [:])
     }
     
     @IBAction func twoKitAction() {
-        RouterManager.shared.rootNavigationPush(type: .two, parmars: [:])
+        RouterManager.shared.rootNavigationPush(kActionKey: kTwoActonKey, parmars: [:])
     }
 }
 

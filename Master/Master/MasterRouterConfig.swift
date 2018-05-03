@@ -11,6 +11,9 @@ import ManagerKit
 import OneKit
 import TwoKit
 
+let kOneActonKey = "kOneActonKey"
+let kTwoActonKey = "kTwoActonKey"
+
 class MasterRouterConfig : RouterConfig {
     
     override func registerCallBacks() {
@@ -21,7 +24,7 @@ class MasterRouterConfig : RouterConfig {
             let vc = OneKitViewController.create(parmars: [:])
             return vc
         }
-        self.registers[RouterManager.PushType.one.rawValue] = one
+        self.registers[kOneActonKey] = one
         
         //注册twokit库需要跳转的类型
         let two : RouterCallBack = {(parmars)->(UIViewController) in
@@ -29,7 +32,7 @@ class MasterRouterConfig : RouterConfig {
             let vc = TwoKitViewController.create(parmars: [:])
             return vc
         }
-        self.registers[RouterManager.PushType.two.rawValue] = two
+        self.registers[kTwoActonKey] = two
         
     }
     

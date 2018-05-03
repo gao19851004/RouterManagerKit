@@ -25,6 +25,6 @@ public class OneKitViewController : UIViewController {
     }
     
     @IBAction func twoKitAction() {
-        RouterManager.shared.rootNavigationPush(type: .two, parmars: [:])
+        RouterManager.shared.rootNavigationPush(kActionKey: "kTwoActonKey", parmars: [:])
     }
 }
